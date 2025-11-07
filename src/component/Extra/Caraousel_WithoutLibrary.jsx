@@ -1,9 +1,9 @@
 import React from "react";
-import slider1 from "../assets/Hero_carousel/protienslider1.png";
-import slider2 from "../assets/Hero_carousel/protienslider2.png";
-import slider3 from "../assets/Hero_carousel/protienslider3.png";
-import slider4 from "../assets/Hero_carousel/protienslider4.png";
-import Rough from "./Items/Rough";
+import slider1 from "../../assets/Hero_carousel/protienslider1.png";
+import slider2 from "../../assets/Hero_carousel/protienslider2.png";
+import slider3 from "../../assets/Hero_carousel/protienslider3.png";
+import slider4 from "../../assets/Hero_carousel/protienslider4.png";
+import Rough from "./Carousel_Support";
 
 const Caraousel = () => {
   const slides = [slider1, slider2, slider3, slider4];

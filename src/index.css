@@ -2,13 +2,14 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-m1: 36rem; /* about to be tablet : equivalent to 576px */
+  --breakpoint-m2: 30rem; /* Large phone : equivalent to 480px */
+  --breakpoint-m3: 23rem; /* smallest phone: equivalent to 368px */
+  --breakpoint-xsm: 10rem; /* equivalent to 160px */
+  --color-primary: #f8f8f8;
   --font-postnobills: "Post No Bills Colombo", sans-serif;
-  --breakpoint-2xl: 80rem; /* equivalent to 1280px */
-  --breakpoint-xl: 64rem; /* equivalent to 1024px */
-  --breakpoint-lg: 61rem; /* equivalent to 976px */
-  --breakpoint-m1: 39rem; /* equivalent to 624px */
-  --breakpoint-m2: 36rem; /* equivalent to 576px */
-  --breakpoint-m3: 28rem; /* equivalent to 448px */
-  --breakpoint-sm: 24rem; /* equivalent to 384px */
-  --breakpoint-xsm: 10rem; /* equivalent to 384px */
+  /* --breakpoint-2xl: 80rem; /* equivalent to 1280px */
+  /* --breakpoint-xl: 64rem; equivalent to 1024px : Default :  */
+  /* --breakpoint-lg: 61rem; equivalent to 976px */
+  /* --breakpoint-sm: 40rem; equivalent to 640px */
 }

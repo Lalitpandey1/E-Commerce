@@ -13,13 +13,13 @@ const Navbar = () => {
   };
   return (
     // Navbar
-    <header className="w-full bg-pink-500 shadow-lg pb-[15px]">
+    <header className="w-full bg-pink-500 shadow-lg ">
       {/* Navbar Container */}
-      <div className="mx-auto w-full md:max-w-[767px] lg:max-w-[769px] xl:max-w-[960px] 2xl:max-w-[1170px] bg-green-500 flex flex-row items-center justify-between py-3 overflow-hidden">
+      <div className=" bg-green-500 flex flex-row items-center justify-between py-3 overflow-hidden">
         {/* title & Hamburger Container */}
-        <div className="flex flex-row items-center bg-white gap-2  font-extrabold text-left ">
+        <div className="flex flex-row items-center bg-blue-300 gap-2.5  font-extrabold text-left ">
           {/* Hamburger svg*/}
-          <a className="sm:hidden sm:ml-2">
+          <a className="sm:hidden ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -43,10 +43,10 @@ const Navbar = () => {
         </div>
 
         {/* NavLink Container */}
-        <div className="flex flex-row overflow-hidden justify-between items-center bg-blue-300 text-white max-w-[28%] m3:max-w-[68%] m3:w-[48%] w-[20%] xsm:mr-2 md:mr-0">
+        <div className="flex flex-row overflow-hidden justify-between items-center bg-blue-300 text-white max-w-[28%] m3:max-w-[24%] m3:w-[48%] w-[35%] sm:mr-2 md:mr-0 xsm:mr-0">
           {/* Product Container */}
           <div
-            className="m3:flex flex-row items-center hidden"
+            className="m2:flex flex-row items-center hidden"
             onClick={handleArrow}
           >
             Products&nbsp;{arrow ? <IoIosArrowUp /> : <IoIosArrowDown />}
@@ -70,7 +70,7 @@ const Navbar = () => {
 
           {/* Login Container */}
           <div className="flex flex-row items-center gap-1">
-            <span className="hidden m3:inline">Login</span>
+            <span className="hidden m2:inline">Login</span>
             <CgProfile size={24} />
           </div>
           {/* Bag Icon */}
