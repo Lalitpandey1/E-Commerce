@@ -4,7 +4,7 @@
 @theme {
   --breakpoint-m1: 36rem; /* about to be tablet : equivalent to 576px */
   --breakpoint-m2: 30rem; /* Large phone : equivalent to 480px */
-  --breakpoint-m3: 23rem; /* smallest phone: equivalent to 368px */
+  --breakpoint-m3: 15rem; /* smallest phone: equivalent to 230px */
   --breakpoint-xsm: 10rem; /* equivalent to 160px */
   --color-primary: #f8f8f8;
   --font-postnobills: "Post No Bills Colombo", sans-serif;
