@@ -9,7 +9,7 @@ const NavBarTemplate = ({ children }) => {
     <div id="DivA" className="w-full bg-blue-500 px-0 md:px-5 overflow-hidden">
       <div
         id="DivB"
-        className={`bg-yellow-400 w-full   overflow-hidden px-[13px] m3:px-7 sm:px-[38px] lg:px-10
+        className={`bg-yellow-400 w-full   overflow-hidden px-[13px] m3:px-7 sm:px-[38px] lg:px-13
         
         `}
       >

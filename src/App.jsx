@@ -8,6 +8,7 @@ import ProductCategories from "./component/PureComponent/ProductCategories";
 import BestSellers from "./component/PureComponent/BestSellers";
 import Supplements from "./component/PureComponent/Supplements";
 import NewLaunchedProduct from "./component/PureComponent/NewLaunchedProduct";
+import TimerOffer from "./component/PureComponent/TimerOffer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,12 +16,13 @@ function App() {
 
   return (
     <>
-      <NavBarTemplate children={<Navbar />} />
+      {/* <NavBarTemplate children={<Navbar />} />
       <ComponentTemplate children={<OfferSlider />} />
       <ComponentTemplate children={<ProductCategories />} />
       <ComponentTemplate children={<BestSellers />} />
       <ComponentTemplate children={<Supplements />} />
-      <ComponentTemplate children={<NewLaunchedProduct />} />
+      <ComponentTemplate children={<NewLaunchedProduct />} /> */}
+      <TimerOffer />
     </>
   );
 }
