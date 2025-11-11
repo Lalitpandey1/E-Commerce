@@ -11,13 +11,10 @@ const M3_PX = "368px"; // 23rem (The effective BASE for the 23px gap)
 
 const ComponentTemplate = ({ children }) => {
   return (
-    <div
-      id="DivA"
-      className="w-full bg-blue-500 px-0 md:px-5 py-2 md:py-4 overflow-hidden"
-    >
+    <div id="DivA" className="w-full bg-blue-500 px-0 md:px-5 py-2 md:py-4 ">
       <div
         id="DivB"
-        className={`bg-yellow-400 w-full   overflow-hidden px-[13px] m3:px-7 sm:px-[38px] lg:px-10
+        className={`bg-yellow-400 w-full    px-[13px] m3:px-7 sm:px-[38px] lg:px-10
         
         `}
       >
@@ -28,7 +25,7 @@ const ComponentTemplate = ({ children }) => {
             ${customWidths} 
             w-full 
             mx-auto 
-            shadow-xl  text-white text-center  overflow-hidden rounded-xl
+            shadow-xl  text-white text-center   rounded-xl
             max-w-[1200px]
           `}
         >

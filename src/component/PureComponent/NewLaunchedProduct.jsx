@@ -1,10 +1,10 @@
 import React from "react";
 import data from "../../assets/BestSellerData.jsx";
-import ProductCardComponent from "../Extra/ProductCardComponent";
+import ProductCardComponent from "../Extra/ProductCardComponent.jsx";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const BestSellers = () => {
+const NewLaunchedProduct = () => {
   const NextArrow = ({ onClick }) => {
     return (
       <div
@@ -77,7 +77,9 @@ const BestSellers = () => {
       <div className="hidden m1:flex w-full relative px-2  m3:px-6 flex-col gap-1 bg-black">
         <div className="flex gap-2 items-center">
           <span className="text-green-300 text-xl font-semibold">|</span>
-          <span className="font-semibold md:text-lg text-sm ">Best Seller</span>
+          <span className="font-semibold md:text-lg text-sm ">
+            New Launched Products
+          </span>
         </div>
         <Slider {...settings}>
           <div className="w-[200px] overflow-hidden bg-gray-800">
@@ -109,7 +111,7 @@ const BestSellers = () => {
           <div className="flex ml-2 gap-2 items-center">
             <span className="text-green-300 text-xl font-semibold">|</span>
             <span className="font-semibold md:text-lg text-sm">
-              Best Sellers
+              New Launched Products
             </span>
             <button className="ml-auto bg-[#38CB89] rounded-full">
               <ChevronRight size={18} />
@@ -147,4 +149,4 @@ const BestSellers = () => {
   );
 };
 
-export default BestSellers;
+export default NewLaunchedProduct;

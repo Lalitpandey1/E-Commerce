@@ -1,10 +1,10 @@
 import React from "react";
 import data from "../../assets/BestSellerData.jsx";
-import ProductCardComponent from "../Extra/ProductCardComponent";
+import ProductCardComponent from "../Extra/ProductCardComponent.jsx";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const BestSellers = () => {
+const Supplements = () => {
   const NextArrow = ({ onClick }) => {
     return (
       <div
@@ -77,7 +77,7 @@ const BestSellers = () => {
       <div className="hidden m1:flex w-full relative px-2  m3:px-6 flex-col gap-1 bg-black">
         <div className="flex gap-2 items-center">
           <span className="text-green-300 text-xl font-semibold">|</span>
-          <span className="font-semibold md:text-lg text-sm ">Best Seller</span>
+          <span className="font-semibold md:text-lg text-sm ">Supplements</span>
         </div>
         <Slider {...settings}>
           <div className="w-[200px] overflow-hidden bg-gray-800">
@@ -100,8 +100,6 @@ const BestSellers = () => {
           </div>
         </Slider>
       </div>
-
-      {/* Mobile Screen Component */}
       <div className="w-full m1:hidden bg-black">
         {/* Title, Menu, More_Buttom */}
         <div className="">
@@ -109,7 +107,7 @@ const BestSellers = () => {
           <div className="flex ml-2 gap-2 items-center">
             <span className="text-green-300 text-xl font-semibold">|</span>
             <span className="font-semibold md:text-lg text-sm">
-              Best Sellers
+              Supplements
             </span>
             <button className="ml-auto bg-[#38CB89] rounded-full">
               <ChevronRight size={18} />
@@ -118,12 +116,12 @@ const BestSellers = () => {
 
           {/* Menu */}
           <div className="flex flex-nowrap my-1 text-[13px] gap-2 overflow-scroll">
-            <span>Health&nbsp;Food</span>
-            <span>Proteins</span>
-            <span>Gainers</span>
-            <span className="whitespace-nowrap">Pre-Workout</span>
-            <span>Accessories</span>
-            <span>Ayurveda</span>
+            <button>Oils</button>
+            <button>Skins&nbsp;&&nbsp;Hairs</button>
+            <button>Vitality</button>
+            <button className="whitespace-nowrap">Digestion</button>
+            <button>Immunity</button>
+            <button>Peanut&nbsp;Butter</button>
           </div>
         </div>
 
@@ -147,4 +145,4 @@ const BestSellers = () => {
   );
 };
 
-export default BestSellers;
+export default Supplements;
