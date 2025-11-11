@@ -75,9 +75,24 @@ const Supplements = () => {
   return (
     <div className="w-full">
       <div className="hidden m1:flex w-full relative px-2  m3:px-6 flex-col gap-1 bg-black">
-        <div className="flex gap-2 items-center">
-          <span className="text-green-300 text-xl font-semibold">|</span>
-          <span className="font-semibold md:text-lg text-sm ">Supplements</span>
+        <div className="">
+          {/* title */}
+          <div className="flex ml-2 gap-2 items-center">
+            <span className="text-green-300 text-xl font-semibold">|</span>
+            <span className="font-semibold md:text-lg text-sm">
+              Supplements
+            </span>
+          </div>
+
+          {/* Menu */}
+          <div className="flex flex-nowrap mt-2 mb-1 text-[13px] gap-2  ">
+            <button>Oils</button>
+            <button>Skins&nbsp;&&nbsp;Hairs</button>
+            <button>Vitality</button>
+            <button className="whitespace-nowrap">Digestion</button>
+            <button>Immunity</button>
+            <button>Peanut&nbsp;Butter</button>
+          </div>
         </div>
         <Slider {...settings}>
           <div className="w-[200px] overflow-hidden bg-gray-800">

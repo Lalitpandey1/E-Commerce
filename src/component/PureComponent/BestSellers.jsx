@@ -75,9 +75,24 @@ const BestSellers = () => {
   return (
     <div className="w-full">
       <div className="hidden m1:flex w-full relative px-2  m3:px-6 flex-col gap-1 bg-black">
-        <div className="flex gap-2 items-center">
-          <span className="text-green-300 text-xl font-semibold">|</span>
-          <span className="font-semibold md:text-lg text-sm ">Best Seller</span>
+        <div className="">
+          {/* title */}
+          <div className="flex ml-2 gap-2 items-center">
+            <span className="text-green-300 text-xl font-semibold">|</span>
+            <span className="font-semibold md:text-lg text-sm">
+              Best Sellers
+            </span>
+          </div>
+
+          {/* Menu */}
+          <div className="flex flex-nowrap mt-2 mb-1 text-[13px] gap-2  ">
+            <span>Health&nbsp;Food</span>
+            <span>Proteins</span>
+            <span>Gainers</span>
+            <span className="whitespace-nowrap">Pre-Workout</span>
+            <span>Accessories</span>
+            <span>Ayurveda</span>
+          </div>
         </div>
         <Slider {...settings}>
           <div className="w-[200px] overflow-hidden bg-gray-800">

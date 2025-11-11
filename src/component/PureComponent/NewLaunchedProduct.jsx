@@ -75,11 +75,14 @@ const NewLaunchedProduct = () => {
   return (
     <div className="w-full">
       <div className="hidden m1:flex w-full relative px-2  m3:px-6 flex-col gap-1 bg-black">
-        <div className="flex gap-2 items-center">
-          <span className="text-green-300 text-xl font-semibold">|</span>
-          <span className="font-semibold md:text-lg text-sm ">
-            New Launched Products
-          </span>
+        <div className="">
+          {/* title */}
+          <div className="flex ml-2 gap-2 items-center">
+            <span className="text-green-300 text-xl font-semibold">|</span>
+            <span className="font-semibold md:text-lg text-sm">
+              New Launched Products
+            </span>
+          </div>
         </div>
         <Slider {...settings}>
           <div className="w-[200px] overflow-hidden bg-gray-800">
@@ -104,47 +107,6 @@ const NewLaunchedProduct = () => {
       </div>
 
       {/* Mobile Screen Component */}
-      <div className="w-full m1:hidden bg-black">
-        {/* Title, Menu, More_Buttom */}
-        <div className="">
-          {/* title */}
-          <div className="flex ml-2 gap-2 items-center">
-            <span className="text-green-300 text-xl font-semibold">|</span>
-            <span className="font-semibold md:text-lg text-sm">
-              New Launched Products
-            </span>
-            <button className="ml-auto bg-[#38CB89] rounded-full">
-              <ChevronRight size={18} />
-            </button>
-          </div>
-
-          {/* Menu */}
-          <div className="flex flex-nowrap my-1 text-[13px] gap-2 overflow-scroll">
-            <span>Health&nbsp;Food</span>
-            <span>Proteins</span>
-            <span>Gainers</span>
-            <span className="whitespace-nowrap">Pre-Workout</span>
-            <span>Accessories</span>
-            <span>Ayurveda</span>
-          </div>
-        </div>
-
-        {/* Products Card */}
-        <div className="grid grid-cols-1 m3:grid-cols-2 gap-x-5 my-4 gap-y-8 px-3">
-          <div className=" overflow-hidden flex justify-center items-center bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden  flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden m3:hidden flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden m3:hidden flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
