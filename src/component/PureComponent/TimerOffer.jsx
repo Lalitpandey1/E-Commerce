@@ -84,7 +84,7 @@ const TimerOffer = () => {
                 <p className="text-[11px] my-0.5 text-white/60">Seconds</p>
               </div>
             </div>
-            <button className="bg-[#38CB89] my-4 py-0.5 font-semibold text-lg m1:text-xl text-center rounded-lg px-10 ">
+            <button className="bg-[#38CB89] my-4 py-0.5 font-semibold m1:text-xl text-center rounded-lg px-10 ">
               Shop now
             </button>
           </div>

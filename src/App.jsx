@@ -9,6 +9,7 @@ import BestSellers from "./component/PureComponent/BestSellers";
 import Supplements from "./component/PureComponent/Supplements";
 import NewLaunchedProduct from "./component/PureComponent/NewLaunchedProduct";
 import TimerOffer from "./component/PureComponent/TimerOffer";
+import Contact from "./component/PureComponent/Contact";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,7 +23,8 @@ function App() {
       <ComponentTemplate children={<BestSellers />} />
       <ComponentTemplate children={<Supplements />} />
       <ComponentTemplate children={<NewLaunchedProduct />} /> */}
-      <TimerOffer />
+      {/* <TimerOffer /> */}
+      <Contact />
     </>
   );
 }
