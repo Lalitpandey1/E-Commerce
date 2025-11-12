@@ -10,6 +10,7 @@ import Supplements from "./component/PureComponent/Supplements";
 import NewLaunchedProduct from "./component/PureComponent/NewLaunchedProduct";
 import TimerOffer from "./component/PureComponent/TimerOffer";
 import Contact from "./component/PureComponent/Contact";
+import Footer from "./component/PureComponent/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,7 +25,8 @@ function App() {
       <ComponentTemplate children={<Supplements />} />
       <ComponentTemplate children={<NewLaunchedProduct />} /> */}
       {/* <TimerOffer /> */}
-      <Contact />
+      {/* <Contact /> */}
+      <Footer />
     </>
   );
 }

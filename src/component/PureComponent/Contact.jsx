@@ -5,33 +5,42 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa6";
 const Contact = () => {
   return (
-    <div className="flex flex-col md:flex-row">
-      {/* Connect with us */}
-      <div className="w-full md:w-[50%] bg-blue-400 flex items-center text-white justify-center py-10">
-        <div className="flex flex-col mx-auto w-[50%] bg-[#38CB89] rounded-lg py-3">
-          <p>Need Help&nbsp;?</p>
-          <p>
-            Mail Us&nbsp;
-            <span className="italic ">@Lalitpandey4all@gmail.com</span>
-          </p>
-          <div className="flex items-center gap-1">
-            <RiErrorWarningLine />
-            <p>FAQs</p>
+    <div className="flex flex-col w-full md:flex-row">
+      {/* Help Center */}
+      <div className="w-full md:w-[50%] flex items-center text-sm xl:text-lg text-white bg-white">
+        {/* green box */}
+        <div className="bg-[#38CB89] flex flex-col py-5 w-[50%] mx-auto overflow-hidden h-40 rounded-lg">
+          {/* Content box */}
+          <div className="w-full flex flex-col">
+            {/* Text-alignment Box -> ML */}
+            <div className="w-full ml-3 m1:ml-5 lg:ml-10 text-wrap">
+              <p>Need Help&nbsp;?</p>
+              <p>
+                Mail Us&nbsp;
+                <span className="italic text-wrap">
+                  @Lalitpandey4all@gmail.com
+                </span>
+              </p>
+              <div className="flex items-center gap-1 text-[16px]">
+                {/* Assuming you have RiErrorWarningLine imported */}
+                <RiErrorWarningLine />
+                <p>FAQs</p>
+              </div>
+            </div>
           </div>
-          <button className="text-[#38CB89] bg-white w-40 self-center rounded-sm py-1">
+          <button className="bg-white self-center text-[#38CB89] rounded-lg m1:px-3 md:px-7 py-0.5">
             Help Center
           </button>
         </div>
       </div>
 
-      {/* Help Center */}
-      <div className="w-full md:w-[50%] bg-amber-400 flex items-center justify-center py-10">
-        <div className="flex flex-col mx-auto w-[50%] bg-white rounded-lg py-3">
+      <div className="w-full md:w-[50%] bg-amber-400 font-semibold text-[15px] m1:text-[20px] flex items-center justify-center py-10 ">
+        <div className="flex flex-col items-center gap-7 py-7 mx-auto w-[50%] bg-white rounded-lg overflow-hidden">
           <p>Connect with Us</p>
-          <div className="flex gap-5 text-[#38CB89]">
-            <IoLogoInstagram />
-            <FaFacebookF />
-            <FaTwitter />
+          <div className="flex gap-5 flex-wrap text-[#38CB89]">
+            <IoLogoInstagram size={28} />
+            <FaFacebookF size={28} />
+            <FaTwitter size={28} />
           </div>
         </div>
       </div>
