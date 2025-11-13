@@ -18,15 +18,19 @@ function App() {
 
   return (
     <>
-      {/* <NavBarTemplate children={<Navbar />} />
+      <NavBarTemplate children={<Navbar />} />
       <ComponentTemplate children={<OfferSlider />} />
       <ComponentTemplate children={<ProductCategories />} />
       <ComponentTemplate children={<BestSellers />} />
       <ComponentTemplate children={<Supplements />} />
-      <ComponentTemplate children={<NewLaunchedProduct />} /> */}
-      {/* <TimerOffer /> */}
-      {/* <Contact /> */}
-      <Footer />
+      <ComponentTemplate children={<NewLaunchedProduct />} />
+      <TimerOffer />
+      <Contact />
+      <NavBarTemplate
+        children={<Footer />}
+        color={"bg-[#2B2B2B]"}
+        Mdwidth={855}
+      />
     </>
   );
 }

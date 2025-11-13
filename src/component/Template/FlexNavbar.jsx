@@ -4,19 +4,26 @@ import React from "react";
 const customWidths =
   "sm:max-w-[594px] md:max-w-[652px] lg:max-w-[904px] xl:max-w-[1200px]";
 
-const NavBarTemplate = ({ children }) => {
+const NavBarTemplate = ({ children, color }) => {
+  const divA_Color = color || "bg-blue-500";
+  const divB_Color = color || "bg-yellow-400";
+  const divC_Color = color || "bg-green-500";
+
   return (
-    <div id="DivA" className="w-full bg-blue-500 px-0 md:px-5 overflow-hidden">
+    <div
+      id="DivA"
+      className={`w-full ${divA_Color} px-0 md:px-5 overflow-hidden`}
+    >
       <div
         id="DivB"
-        className={`bg-yellow-400 w-full   overflow-hidden px-[13px] m3:px-7 sm:px-[38px] lg:px-13
+        className={`${divB_Color} w-full   overflow-hidden px-[13px] m3:px-7 sm:px-[38px] lg:px-13
         
         `}
       >
         <div
           id="DivC"
           className={`
-            bg-green-500 
+            ${divC_Color} 
             ${customWidths} 
             w-full 
             mx-auto 

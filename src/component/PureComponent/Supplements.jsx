@@ -130,7 +130,7 @@ const Supplements = () => {
           </div>
 
           {/* Menu */}
-          <div className="flex flex-nowrap my-1 text-[13px] gap-2 overflow-scroll">
+          <div className="flex flex-nowrap my-1 text-[13px] gap-2 ml-2 overflow-scroll scrollbar-hide">
             <button>Oils</button>
             <button>Skins&nbsp;&&nbsp;Hairs</button>
             <button>Vitality</button>

@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div className="flex flex-col w-full md:flex-row">
       {/* Help Center */}
-      <div className="w-full md:w-[50%] flex items-center text-sm xl:text-lg text-white bg-white">
+      <div className="w-full md:w-[50%] flex items-center text-sm xl:text-lg text-white bg-white py-10 ">
         {/* green box */}
         <div className="bg-[#38CB89] flex flex-col py-5 w-[50%] mx-auto overflow-hidden h-40 rounded-lg">
           {/* Content box */}

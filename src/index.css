@@ -13,3 +13,13 @@
   /* --breakpoint-lg: 61rem; equivalent to 976px */
   /* --breakpoint-sm: 40rem; equivalent to 640px */
 }
+
+@layer utilities {
+  .scrollbar-hide {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}

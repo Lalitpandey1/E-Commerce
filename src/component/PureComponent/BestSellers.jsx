@@ -132,7 +132,7 @@ const BestSellers = () => {
           </div>
 
           {/* Menu */}
-          <div className="flex flex-nowrap my-1 text-[13px] gap-2 overflow-scroll">
+          <div className="flex flex-nowrap my-1 ml-2 text-[13px] gap-2 overflow-scroll scrollbar-hide">
             <span>Health&nbsp;Food</span>
             <span>Proteins</span>
             <span>Gainers</span>
