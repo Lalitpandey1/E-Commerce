@@ -17,7 +17,7 @@ const Navbar = () => {
       {/* Navbar Container */}
       <div className=" bg-green-500 flex flex-row items-center justify-between py-3 overflow-hidden">
         {/* title & Hamburger Container */}
-        <div className="flex flex-row items-center bg-blue-300 gap-2.5  font-extrabold text-left ">
+        <div className="flex flex-row items-center bg-blue-300 gap-2.5  font-extrabold">
           {/* Hamburger svg*/}
           <a className="sm:hidden ">
             <svg
@@ -36,30 +36,28 @@ const Navbar = () => {
               <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           </a>
+
           {/* title */}
-          <p className="font-postnobills font-extrabold text-sm m3:text-[18px] m2:text-[20px] m1:text-[24px] md:text-2xl text-left">
+          <p className="2xl:text-4xl xl:text-4xl lg:text-3xl md:text-3xl m2:text-lg text-left font-postnobills font-extrabold ">
             EnergizeX
           </p>
         </div>
 
         {/* NavLink Container */}
-        <div className="flex flex-row overflow-hidden justify-between items-center bg-blue-300 text-white max-w-[28%] m3:max-w-[24%] m3:w-[48%] w-[35%] sm:mr-2 md:mr-0 xsm:mr-0">
-          {/* Product Container */}
-          <div
-            className="m2:flex flex-row items-center hidden"
-            onClick={handleArrow}
-          >
+        <div className="flex gap-2 md:gap-3 xl:gap-4 lg:text-[17px] md:text-[14px] m2:text-[12px] items-center bg-purple-500">
+          {/* Products */}
+          <div className="m2:flex items-center hidden" onClick={handleArrow}>
             Products&nbsp;{arrow ? <IoIosArrowUp /> : <IoIosArrowDown />}
           </div>
-          <a className="hidden m1:block">Contact&nbsp;Us</a>
-
-          {/* Input Container */}
-          <div className="relative  items-center">
+          {/* Contact Us */}
+          <div className="hidden m1:block">Contact Us</div>
+          {/* SearchBox */}
+          <div className="relative items-center">
             <input
               id="inputBox"
               type="text"
               placeholder="Search"
-              className={`rounded-lg border border-gray-300 py-0.5 pl-7 w-30 hidden xl:flex focus:outline-none focus:ring-2 focus:ring-blue-400`}
+              className={`rounded-lg border border-gray-300 pl-7 w-30 hidden xl:flex focus:outline-none focus:ring-2 focus:ring-blue-400`}
             />
             <IoSearch
               size={18}
@@ -67,16 +65,16 @@ const Navbar = () => {
               className="xl:absolute left-1.5 top-1/5 text-black"
             />
           </div>
-
-          {/* Login Container */}
-          <div className="flex flex-row items-center gap-1">
+          {/* Login */}
+          <div className="flex gap-1 items-center">
             <span className="hidden m2:inline">Login</span>
-            <CgProfile size={24} />
+            <CgProfile size={26} />
+            {/* xl:26 */}
           </div>
-          {/* Bag Icon */}
-          <a>
-            <IoBagHandle size={24} />
-          </a>
+          {/* Shopping */}
+          <div>
+            <IoBagHandle size={22} />
+          </div>
         </div>
       </div>
     </header>
