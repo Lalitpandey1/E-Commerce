@@ -5,10 +5,7 @@ const Navlink = () => {
     <div>
       <div className="flex flex-row overflow-hidden justify-between items-center bg-blue-300 text-white max-w-[28%] m3:max-w-[24%] m3:w-[48%] w-[35%] sm:mr-2 md:mr-0 xsm:mr-0">
         {/* Product Container */}
-        <div
-          className="m2:flex flex-row items-center hidden"
-          onClick={handleArrow}
-        >
+        <div className="m2:flex items-center hidden" onClick={handleArrow}>
           Products&nbsp;{arrow ? <IoIosArrowUp /> : <IoIosArrowDown />}
         </div>
         <a className="hidden m1:block">Contact&nbsp;Us</a>
