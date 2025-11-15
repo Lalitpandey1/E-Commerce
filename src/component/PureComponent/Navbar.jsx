@@ -1,5 +1,5 @@
 /* @ts-nocheck */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { X } from "lucide-react";
@@ -7,25 +7,56 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { IoBagHandle } from "react-icons/io5";
-import { flushSync } from "react-dom";
+import LoginModal from "../LoginModal/LoginModal";
+
 const Navbar = () => {
   const [arrow, setArrow] = useState(false);
   const [drop, setDrop] = useState(false);
   const [Burger, setBurger] = useState(false);
+  const [productsDrop, setProductsDrop] = useState(false);
+  const [isOpen, setIsModal] = useState(false);
 
   const handleArrow = () => {
     if (Burger === false) {
       setArrow((arr) => !arr);
     }
   };
+
   const handleBurger = () => {
     setDrop((drop) => (!drop ? null : drop === false));
     setBurger((burger) => !burger);
+    document.body.classList.add("overflow-hidden");
   };
+
+  const handleProductDrop = () => {
+    setProductsDrop((drop) => (drop = !drop));
+  };
+
   const handleDrop = () => {
     setBurger((burger) => (!burger ? null : burger === false));
     setDrop((drop) => !drop);
   };
+
+  const toggleModal = () => {
+    setIsModal(!isOpen);
+    console.log(isOpen);
+  };
+
+  useEffect(() => {
+    if (Burger) {
+      // Add class when modal opens
+      document.body.classList.add("overflow-hidden");
+    } else {
+      // Remove class when modal closes
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Cleanup function to ensure class is removed when component unmounts
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [Burger]);
+
   return (
     // Navbar
     <header className="w-full  bg-pink-500 shadow-lg ">
@@ -68,11 +99,15 @@ const Navbar = () => {
             />
           </div>
           {/* Login */}
-          <div className="flex gap-1 items-center">
+          <div
+            className="flex gap-1 items-center cursor-pointer"
+            onClick={toggleModal}
+          >
             <span className="hidden m2:inline">Login</span>
             <CgProfile size={26} />
             {/* xl:26 */}
           </div>
+
           {/* Shopping */}
           <div>
             <IoBagHandle size={26} />
@@ -100,6 +135,45 @@ const Navbar = () => {
           />
         </div>
       </div>
+
+      <div
+        className={`w-full transition-all duration-500 ease-in-out h-full xl:hidden flex bg-red-700 ${
+          Burger ? "max-h-max" : "max-h-0"
+        } `}
+      >
+        {/* Navigation COntainer */}
+        <div className="w-full">
+          {/* Navigation Content */}
+          <div className="mx-auto gap-2 my-4 flex flex-col w-full  justify-center items-center">
+            <div
+              className="flex items-center gap-1"
+              onClick={handleProductDrop}
+            >
+              <p>Products</p>
+              <IoIosArrowDown />
+            </div>
+
+            {/* products Dropdown */}
+            <div
+              className={`flex-col gap-2 ${
+                productsDrop ? "flex" : "hidden"
+              } text-black`}
+            >
+              <p>Protiens</p>
+              <p>Gainers</p>
+              <p>Pre-Work-Out</p>
+              <p>Accessories</p>
+              <p>Supplements</p>
+              <p>New Launched Products</p>
+            </div>
+
+            <p>Contact Us</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Login Modal */}
+      {isOpen && <LoginModal toggleModal={toggleModal} />}
     </header>
   );
 };

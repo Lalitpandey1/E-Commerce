@@ -95,24 +95,18 @@ const BestSellers = () => {
           </div>
         </div>
         <Slider {...settings}>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
+          {data.map((data) => (
+            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
+              <ProductCardComponent
+                images={data.images}
+                title={data.title}
+                rating={data.rating}
+                discount={data.discount}
+                totalPrice={data.totalPrice}
+                Price={data.Price}
+              />
+            </div>
+          ))}
         </Slider>
       </div>
 
@@ -144,18 +138,21 @@ const BestSellers = () => {
 
         {/* Products Card */}
         <div className="grid grid-cols-1 m3:grid-cols-2 gap-x-5 my-4 gap-y-8 px-3">
-          <div className=" overflow-hidden flex justify-center items-center bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden  flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden m3:hidden flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden m3:hidden flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
+          {data.map((item) => (
+            <div
+              key={item.id}
+              className=" overflow-hidden flex justify-center items-center bg-gray-800"
+            >
+              <ProductCardComponent
+                images={item.images}
+                title={item.title}
+                rating={item.rating}
+                discount={item.discount}
+                totalPrice={item.totalPrice}
+                Price={item.Price}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

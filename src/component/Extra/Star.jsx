@@ -10,11 +10,11 @@ function Star({ stars }) {
     return (
       <span key={index} className="flex">
         {stars >= index + 1 ? (
-          <FaStar size={13} color="yellow" className="icon" />
+          <FaStar size={13} color="#38CB89" className="icon" />
         ) : stars >= numbers ? (
-          <FaStarHalfAlt size={13} color="yellow" className="icon" />
+          <FaStarHalfAlt size={13} color="#38CB89" className="icon" />
         ) : (
-          <AiOutlineStar size={13} color="yellow" className="icon" />
+          <AiOutlineStar size={13} color="#38CB89" className="icon" />
         )}
       </span>
     );
