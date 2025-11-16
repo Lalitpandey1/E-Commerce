@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "../../assets/BestSellerData.jsx";
-import ProductCardComponent from "../Extra/ProductCardComponent.jsx";
+import ProductCardComponent from "../Extra/ProductCardComponent";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const NewLaunchedProduct = () => {
+const Supplements = () => {
+  const [productData, setProductData] = useState(data);
+
   const NextArrow = ({ onClick }) => {
     return (
       <div
@@ -35,7 +37,8 @@ const NewLaunchedProduct = () => {
   );
   const settings = {
     dots: false,
-    infinite: false,
+    initialSlide: 2,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -85,30 +88,55 @@ const NewLaunchedProduct = () => {
           </div>
         </div>
         <Slider {...settings}>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
+          {productData.reverse().map((data) => (
+            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
+              <ProductCardComponent
+                images={data.images}
+                title={data.title}
+                rating={data.rating}
+                discount={data.discount}
+                totalPrice={data.totalPrice}
+                Price={data.Price}
+              />
+            </div>
+          ))}
         </Slider>
       </div>
 
       {/* Mobile Screen Component */}
+      <div className="w-full m1:hidden bg-black">
+        {/* Title, Menu, More_Buttom */}
+        <div className="">
+          {/* title */}
+          <div className="flex ml-2 gap-2 items-center">
+            <span className="text-green-300 text-xl font-semibold">|</span>
+            <span className="font-semibold md:text-lg text-sm">
+              New Launched Products
+            </span>
+            <button className="ml-auto bg-[#38CB89] rounded-full">
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
+
+        {/* Products Card */}
+        <div className="grid grid-cols-1 m3:grid-cols-2 gap-x-5 my-4 gap-y-8 px-3">
+          {data.slice(0, 4).map((data) => (
+            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
+              <ProductCardComponent
+                images={data.images}
+                title={data.title}
+                rating={data.rating}
+                discount={data.discount}
+                totalPrice={data.totalPrice}
+                Price={data.Price}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default NewLaunchedProduct;
+export default Supplements;

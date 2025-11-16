@@ -3,7 +3,6 @@ import React from "react";
 import { Heart } from "lucide-react"; // Assuming you still use lucide-react for the Heart icon
 import category6 from "../../assets/CategoriesImg/Category6.png"; // Assuming category6 is the correct image source
 import Star from "./Star";
-import { data } from "react-router-dom";
 const ProductCardComponent = ({
   images,
   title,
@@ -12,6 +11,8 @@ const ProductCardComponent = ({
   Price,
   totalPrice,
 }) => {
+  const maxTitleString = 50;
+
   return (
     // Add 'relative' to the parent container
     <div className="relative flex flex-col items-center justify-center px-3 md:px-8 xl:px-9  bg-[#F8F8F8] rounded-2xl shadow-lg mx-auto">
@@ -34,7 +35,11 @@ const ProductCardComponent = ({
       {/* Product Image - No need for relative or z-index here if it's the main content */}
       {/* The image should not have relative position or z-index on it as it's not absolutely positioned itself */}
 
-      <img src={images[0]} alt="title" className=" py-1  max-w-full h-auto " />
+      <img
+        src={images && images.length > 0 ? images[0] : category6}
+        alt="title"
+        className=" py-1 max-w-full max-h-[200px] "
+      />
 
       <button className="md:py-1.5 py-1 px-2 md:px-4 my-1 text-[5px] m2:text-xs rounded-2xl bg-green-400 text-white font-semibold hover:bg-green-500 transition-colors">
         Add to Cart
@@ -46,7 +51,9 @@ const ProductCardComponent = ({
 
         {/* Title */}
         <h2 className="text-left text-ellipsis font-medium text-black xl:text-[14px] md:text-[10px] text-[8px]">
-          {title}
+          {String(title).length > maxTitleString
+            ? title.substring(0, maxTitleString) + "..."
+            : title}
         </h2>
       </div>
       {/* Pricing */}

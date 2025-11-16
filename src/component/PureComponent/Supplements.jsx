@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "../../assets/BestSellerData.jsx";
-import ProductCardComponent from "../Extra/ProductCardComponent.jsx";
+import ProductCardComponent from "../Extra/ProductCardComponent";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Supplements = () => {
+  const [productData, setProductData] = useState(data);
+
   const NextArrow = ({ onClick }) => {
     return (
       <div
@@ -35,7 +37,8 @@ const Supplements = () => {
   );
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
+    initialSlide: 4,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -95,26 +98,22 @@ const Supplements = () => {
           </div>
         </div>
         <Slider {...settings}>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[200px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="w-[230px] overflow-hidden bg-gray-800">
-            <ProductCardComponent />
-          </div>
+          {productData.reverse().map((data) => (
+            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
+              <ProductCardComponent
+                images={data.images}
+                title={data.title}
+                rating={data.rating}
+                discount={data.discount}
+                totalPrice={data.totalPrice}
+                Price={data.Price}
+              />
+            </div>
+          ))}
         </Slider>
       </div>
+
+      {/* Mobile Screen Component */}
       <div className="w-full m1:hidden bg-black">
         {/* Title, Menu, More_Buttom */}
         <div className="">
@@ -130,7 +129,7 @@ const Supplements = () => {
           </div>
 
           {/* Menu */}
-          <div className="flex flex-nowrap my-1 text-[13px] gap-2 ml-2 overflow-scroll scrollbar-hide">
+          <div className="flex flex-nowrap my-1 ml-2 text-[13px] gap-2 overflow-scroll scrollbar-hide">
             <button>Oils</button>
             <button>Skins&nbsp;&&nbsp;Hairs</button>
             <button>Vitality</button>
@@ -142,18 +141,18 @@ const Supplements = () => {
 
         {/* Products Card */}
         <div className="grid grid-cols-1 m3:grid-cols-2 gap-x-5 my-4 gap-y-8 px-3">
-          <div className=" overflow-hidden flex justify-center items-center bg-gray-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden  flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden m3:hidden flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
-          <div className="overflow-hidden m3:hidden flex justify-center items-center bg-blue-800">
-            <ProductCardComponent />
-          </div>
+          {data.slice(0, 4).map((data) => (
+            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
+              <ProductCardComponent
+                images={data.images}
+                title={data.title}
+                rating={data.rating}
+                discount={data.discount}
+                totalPrice={data.totalPrice}
+                Price={data.Price}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "../../assets/BestSellerData.jsx";
 import ProductCardComponent from "../Extra/ProductCardComponent";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const BestSellers = () => {
+  const [productData, setProductData] = useState(data);
+
   const NextArrow = ({ onClick }) => {
     return (
       <div
@@ -35,7 +37,7 @@ const BestSellers = () => {
   );
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -72,6 +74,17 @@ const BestSellers = () => {
     ],
   };
 
+  const filterProtien = () => {
+    let filterData = data.filter((product) => {
+      product.Bestcategory === "protien";
+    });
+    setProductData(filterData);
+  };
+
+  const showAllProducts = () => {
+    setProductData(data); // Set state back to the original imported data
+  };
+
   return (
     <div className="w-full">
       <div className="hidden m1:flex w-full relative px-2  m3:px-6 flex-col gap-1 bg-black">
@@ -86,8 +99,8 @@ const BestSellers = () => {
 
           {/* Menu */}
           <div className="flex flex-nowrap mt-2 mb-1 text-[13px] gap-2  ">
-            <span>Health&nbsp;Food</span>
-            <span>Proteins</span>
+            <span onClick={showAllProducts}>Health&nbsp;Food</span>
+            <span onClick={filterProtien}>Proteins</span>
             <span>Gainers</span>
             <span className="whitespace-nowrap">Pre-Workout</span>
             <span>Accessories</span>
@@ -95,7 +108,7 @@ const BestSellers = () => {
           </div>
         </div>
         <Slider {...settings}>
-          {data.map((data) => (
+          {productData.map((data) => (
             <div key={data.id} className="w-full overflow-hidden bg-gray-800">
               <ProductCardComponent
                 images={data.images}
@@ -128,7 +141,7 @@ const BestSellers = () => {
           {/* Menu */}
           <div className="flex flex-nowrap my-1 ml-2 text-[13px] gap-2 overflow-scroll scrollbar-hide">
             <span>Health&nbsp;Food</span>
-            <span>Proteins</span>
+            <span onClick={filterProtien}>Proteins</span>
             <span>Gainers</span>
             <span className="whitespace-nowrap">Pre-Workout</span>
             <span>Accessories</span>
@@ -138,18 +151,15 @@ const BestSellers = () => {
 
         {/* Products Card */}
         <div className="grid grid-cols-1 m3:grid-cols-2 gap-x-5 my-4 gap-y-8 px-3">
-          {data.map((item) => (
-            <div
-              key={item.id}
-              className=" overflow-hidden flex justify-center items-center bg-gray-800"
-            >
+          {data.slice(0, 4).map((data) => (
+            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
               <ProductCardComponent
-                images={item.images}
-                title={item.title}
-                rating={item.rating}
-                discount={item.discount}
-                totalPrice={item.totalPrice}
-                Price={item.Price}
+                images={data.images}
+                title={data.title}
+                rating={data.rating}
+                discount={data.discount}
+                totalPrice={data.totalPrice}
+                Price={data.Price}
               />
             </div>
           ))}
