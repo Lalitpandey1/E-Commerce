@@ -15,7 +15,7 @@ const Footer = () => {
   return (
     <div>
       {/* Structure 1 */}
-      <div className="w-full hidden md:block">
+      <div className="w-full  md:bg-[#2B2B2B] py-1 hidden md:block">
         <div className="md:grid  lg:grid-cols-[3fr_1fr_1fr_2fr] my-[55px] md:grid-cols-[2fr_1fr_1fr_1fr] grid-cols-4 md:gap-7 lg:gap-10 overflow-hidden">
           <div className=" border border-white">
             <div>
@@ -109,7 +109,7 @@ const Footer = () => {
 
       {/* Structure 2 */}
 
-      <div className="flex flex-col gap-y-4 md:hidden">
+      <div className="flex bg-black flex-col gap-y-4 md:hidden">
         {/* Header */}
         <div>
           <h3 className="text-[25px] text-[#38CB89] font-bold font-postnobills">

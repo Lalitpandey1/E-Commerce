@@ -10,9 +10,18 @@ const data = [
     ],
     discount: "30%",
     Price: 5289,
+    Weight: "4kg",
     totalPrice: 7600,
     rating: 4.7,
     Bestcategory: "protien",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "B045",
@@ -28,6 +37,14 @@ const data = [
     totalPrice: 6186,
     rating: 4.5,
     Bestcategory: "protien",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "C120",
@@ -44,6 +61,14 @@ const data = [
     totalPrice: 1500,
     rating: 4.9,
     Bestcategory: "accessories",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "D007",
@@ -59,6 +84,14 @@ const data = [
     totalPrice: 6599,
     rating: 4.6,
     Bestcategory: "protien",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "E901",
@@ -75,6 +108,14 @@ const data = [
     totalPrice: 7954,
     rating: 4.8,
     Bestcategory: "protien",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "F555",
@@ -90,6 +131,14 @@ const data = [
     totalPrice: 6500,
     rating: 4.4,
     Bestcategory: "pre-workout",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "G311",
@@ -106,6 +155,14 @@ const data = [
     totalPrice: 2099,
     rating: 4.3,
     Bestcategory: "healthfood",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "H202",
@@ -121,6 +178,14 @@ const data = [
     totalPrice: 1400,
     rating: 4.2,
     Bestcategory: "gainers",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "I777",
@@ -136,6 +201,14 @@ const data = [
     totalPrice: 1400,
     rating: 4.6,
     Bestcategory: "pre-workout",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
   {
     id: "J808",
@@ -151,6 +224,14 @@ const data = [
     totalPrice: 1199,
     rating: 5.0,
     Bestcategory: "ayurveda",
+    reviews: [
+      {
+        username: "",
+        review: "",
+      },
+    ],
+    descriptions:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
   },
 ];
 export default data;

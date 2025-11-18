@@ -3,6 +3,7 @@ import data from "../../assets/BestSellerData.jsx";
 import ProductCardComponent from "../Extra/ProductCardComponent";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ProductPage from "./ProductPage/ProductPage.jsx";
 
 const BestSellers = () => {
   const [productData, setProductData] = useState(data);
@@ -109,7 +110,11 @@ const BestSellers = () => {
         </div>
         <Slider {...settings}>
           {productData.map((data) => (
-            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
+            <div
+              key={data.id}
+              className="w-full overflow-hidden bg-gray-800"
+              onClick={<ProductPage images={data.images} />}
+            >
               <ProductCardComponent
                 images={data.images}
                 title={data.title}

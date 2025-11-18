@@ -11,6 +11,7 @@ import NewLaunchedProduct from "./component/PureComponent/NewLaunchedProduct";
 import TimerOffer from "./component/PureComponent/TimerOffer";
 import Contact from "./component/PureComponent/Contact";
 import Footer from "./component/PureComponent/Footer";
+import ProductPage from "./component/PureComponent/ProductPage/ProductPage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <>
-      <NavBarTemplate children={<Navbar />} />
+      {/* <NavBarTemplate children={<Navbar />} />
       <ComponentTemplate children={<OfferSlider />} />
       <ComponentTemplate children={<ProductCategories />} />
       <ComponentTemplate children={<BestSellers />} />
@@ -30,7 +31,10 @@ function App() {
         children={<Footer />}
         color={"bg-[#2B2B2B]"}
         Mdwidth={855}
-      />
+      /> */}
+
+      <ComponentTemplate children={<ProductPage id={"E901"} />} />
+      {/* <Footer /> */}
     </>
   );
 }
