@@ -12,6 +12,7 @@ import TimerOffer from "./component/PureComponent/TimerOffer";
 import Contact from "./component/PureComponent/Contact";
 import Footer from "./component/PureComponent/Footer";
 import ProductPage from "./component/PureComponent/ProductPage/ProductPage";
+import Cart from "./component/PureComponent/Cart/Cart";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,8 +34,9 @@ function App() {
         Mdwidth={855}
       /> */}
 
-      <ComponentTemplate children={<ProductPage id={"E901"} />} />
+      {/* <ComponentTemplate children={<ProductPage id={"E901"} />} /> */}
       {/* <Footer /> */}
+      <ComponentTemplate children={<Cart id={"B045"} />} />
     </>
   );
 }

@@ -61,6 +61,7 @@ const ProductPage = ({ id }) => {
           {productData.descriptions}
         </p>
       </div>
+      <div className="my-7"></div>
       <BestSellers />
       <Footer />
     </div>
