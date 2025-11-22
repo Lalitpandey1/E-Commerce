@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 import data from "../../../assets/BestSellerData";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProductLookup } from "../../../features/cart/productSlice";
+import { removeItem, updateQuantity } from "../../../features/cart/cartSlice";
 
-const CartItem = ({ id, Qty, handleRemoveItem }) => {
-  const fetchProduct = (id) => {
-    const filteredData = data.find((item) => item.id === id);
-    return filteredData;
+const CartItem = ({ id, Qty }) => {
+  const dispatch = useDispatch();
+  const productLookup = useSelector(selectProductLookup);
+
+  const handleRemoveItem = () => {
+    dispatch(removeItem(id));
   };
-  let product = fetchProduct(id);
+  const product = productLookup[id];
+  if (!product) return;
 
   return (
     <div>

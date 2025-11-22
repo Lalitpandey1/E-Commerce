@@ -1,24 +1,18 @@
 import React, { useEffect, useState } from "react";
 import CartItem from "./CartItem";
 import data from "../../../assets/BestSellerData";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectCartItems,
+  selectCartTotal,
+  addItem,
+} from "../../../features/cart/cartSlice";
+import { selectProductLookup } from "../../../features/cart/productSlice";
 
 const Cart = ({ newId }) => {
-  const [cartValue, setCartValue] = useState(0);
-  const [cartItems, setCartItems] = useState([
-    {
-      id: "A001",
-      Qty: 3,
-    },
-    {
-      id: "B045",
-      Qty: 1,
-    },
-  ]);
-
-  const fetchProduct = (id) => {
-    const filteredData = data.find((item) => item.id === id);
-    return filteredData;
-  };
+  const cartItems = useSelector(selectCartItems);
+  const cartValue = useSelector(selectCartTotal);
+  const dispatch = useDispatch();
 
   const getTomorrowDate = () => {
     const today = new Date();
@@ -29,42 +23,9 @@ const Cart = ({ newId }) => {
   };
 
   useEffect(() => {
-    if (newId) {
-      // If Item Exists already
-      const currentProduct = cartItems.find((item) => item.id === newId);
-      if (currentProduct) {
-        setCartItems((prevItems) => {
-          return prevItems.map((item) => {
-            if (item.id === newId) {
-              return {
-                ...item, // copy all other items
-                Qty: item.Qty + 1,
-              };
-            }
-          });
-        });
-      } else {
-        setCartItems((prevItems) => [...prevItems, { id: newId, Qty: 1 }]);
-      }
-    } else return;
-  }, [newId]);
-
-  useEffect(() => {
-    const AllProducts = data;
-
-    const total = cartItems.reduce((acc, item) => {
-      const product = AllProducts.find((p) => p.id == item.id);
-      if (product && product.Price) {
-        return acc + product.Price * item.Qty;
-      }
-      return acc;
-    }, 0);
-    setCartValue(total);
-  }, [cartItems]);
-
-  const handleRemoveItem = (id) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  };
+    if (!newId) return;
+    dispatch(addItem(newId));
+  }, [newId, dispatch]);
 
   return (
     <div className="text-black flex flex-col py-10 overflow-hidden">
@@ -93,12 +54,7 @@ const Cart = ({ newId }) => {
         <hr className="text-gray-400" />
         {/* Products */}
         {cartItems.map((item) => (
-          <CartItem
-            key={item.id}
-            id={item.id}
-            handleRemoveItem={handleRemoveItem}
-            Qty={item.Qty}
-          />
+          <CartItem key={item.id} id={item.id} Qty={item.Qty} />
         ))}
 
         {/* Checkout Section */}
