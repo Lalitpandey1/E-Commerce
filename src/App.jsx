@@ -36,7 +36,7 @@ function App() {
 
       {/* <ComponentTemplate children={<ProductPage id={"E901"} />} /> */}
       {/* <Footer /> */}
-      <ComponentTemplate children={<Cart id={"B045"} />} />
+      <ComponentTemplate children={<Cart newId={"D007"} />} />
     </>
   );
 }
