@@ -29,7 +29,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <button className="bg-white self-center text-[#38CB89] rounded-lg m1:px-3 md:px-7 py-0.5">
+          <button className="bg-white self-center text-[#38CB89] rounded-lg px-1 m1:px-3 md:px-7 py-0.5">
             Help Center
           </button>
         </div>

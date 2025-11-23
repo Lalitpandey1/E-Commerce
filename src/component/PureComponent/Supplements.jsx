@@ -79,18 +79,18 @@ const Supplements = () => {
 
   return (
     <div className="w-full">
-      <div className="hidden m1:flex w-full relative px-2  m3:px-6 flex-col gap-1 bg-black">
+      <div className="hidden m1:flex w-full relative px-2 rounded-lg m3:px-6 flex-col gap-1 bg-[#ffff]">
         <div className="">
           {/* title */}
           <div className="flex ml-2 gap-2 items-center">
             <span className="text-green-300 text-xl font-semibold">|</span>
-            <span className="font-semibold md:text-lg text-sm">
+            <span className="font-semibold md:text-lg text-black text-sm">
               Supplements
             </span>
           </div>
 
           {/* Menu */}
-          <div className="flex flex-nowrap mt-2 mb-1 text-[13px] gap-2  ">
+          <div className="flex flex-nowrap mt-2 mb-1 text-black text-[13px] gap-2  ">
             <button>Oils</button>
             <button>Skins&nbsp;&&nbsp;Hairs</button>
             <button>Vitality</button>
@@ -101,7 +101,7 @@ const Supplements = () => {
         </div>
         <Slider {...settings}>
           {data.reverse().map((data) => (
-            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
+            <div key={data.id} className="w-full overflow-hidden ">
               <ProductCardComponent
                 id={data.id}
                 images={data.images}
@@ -119,13 +119,13 @@ const Supplements = () => {
       </div>
 
       {/* Mobile Screen Component */}
-      <div className="w-full m1:hidden bg-black">
+      <div className="w-full m1:hidden bg-[#ffff] rounded-lg">
         {/* Title, Menu, More_Buttom */}
         <div className="">
           {/* title */}
           <div className="flex ml-2 gap-2 items-center">
             <span className="text-green-300 text-xl font-semibold">|</span>
-            <span className="font-semibold md:text-lg text-sm">
+            <span className="font-semibold text-black md:text-lg text-sm">
               Supplements
             </span>
             <button className="ml-auto bg-[#38CB89] rounded-full">
@@ -134,7 +134,7 @@ const Supplements = () => {
           </div>
 
           {/* Menu */}
-          <div className="flex flex-nowrap my-1 ml-2 text-[13px] gap-2 overflow-scroll scrollbar-hide">
+          <div className="flex flex-nowrap my-1 ml-2 text-[13px] text-black gap-2 overflow-scroll scrollbar-hide">
             <button>Oils</button>
             <button>Skins&nbsp;&&nbsp;Hairs</button>
             <button>Vitality</button>
@@ -147,7 +147,7 @@ const Supplements = () => {
         {/* Products Card */}
         <div className="grid grid-cols-1 m3:grid-cols-2 gap-x-5 my-4 gap-y-8 px-3">
           {data.slice(0, 4).map((data) => (
-            <div key={data.id} className="w-full overflow-hidden bg-gray-800">
+            <div key={data.id} className="w-full overflow-hidden">
               <ProductCardComponent
                 id={data.id}
                 images={data.images}

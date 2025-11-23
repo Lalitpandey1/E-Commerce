@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { Heart } from "lucide-react"; // Assuming you still use lucide-react for the Heart icon
 import category6 from "../../assets/CategoriesImg/Category6.png"; // Assuming category6 is the correct image source
 import Star from "./Star";
+import { useNavigate } from "react-router-dom";
+
 const ProductCardComponent = ({
   id,
   images,
@@ -16,11 +18,18 @@ const ProductCardComponent = ({
   AddtoCart,
 }) => {
   const maxTitleString = 50;
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const handleNavigate = (id) => {
+    console.log("clicked");
+    navigate(`/products/${id}`);
+  };
   return (
     // Add 'relative' to the parent container
-    <div className="relative flex flex-col items-center justify-center px-3 md:px-8 xl:px-9  bg-[#F8F8F8] rounded-2xl shadow-lg mx-auto">
+    <div
+      className="relative flex flex-col items-center justify-center px-3 md:px-8 xl:px-9 border border-[#DCDCDC] hover:border-[#E0E0E0] bg-[#F0F0F0] hover:bg-green-100  rounded-2xl shadow-lg mx-auto  "
+      onClick={() => handleNavigate(id)}
+    >
       {/* BESTSELLER Tag - Adjusted for positioning */}
       {bestSeller && (
         <h2 className="invisible lg:visible self-start font-medium text-[#38CB89] py-1 px-2 z-10">

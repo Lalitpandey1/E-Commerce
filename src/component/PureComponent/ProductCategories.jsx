@@ -39,7 +39,7 @@ const ProductCategories = () => {
             <div
               key={cat.title}
               // Set the fractional width ONLY for the desktop Flex layout
-              className="flex my-1 flex-col items-center border border-red-500"
+              className="flex my-1 flex-col items-center border border-[#DCDCDC] rounded-lg bg-[#F0F0F0] hover:bg-green-100"
             >
               <img
                 src={cat.img}

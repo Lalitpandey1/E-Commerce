@@ -40,7 +40,7 @@ const Cart = () => {
       <div
         className={`${
           cartItems.length === 0 ? "hidden" : "flex"
-        } flex-col py-15 my-2 bg-red-500`}
+        } flex-col py-15 my-2 bg-[#f8f8f8]`}
       >
         <hr className="text-gray-400" />
         {/* Products */}
@@ -49,7 +49,7 @@ const Cart = () => {
         ))}
 
         {/* Checkout Section */}
-        <div className="bg-blue-500  w-full mt-15 text-left">
+        <div className="w-full mt-15 bg-[#FAFAF5] border-[#DCDCDC] shadow-md rounded-lg text-left">
           <div className="flex justify-between font-semibold text-black text-sm m1:text-lg">
             <p>Your Total</p>
             <p className="font-semibold text-gray-900 text-sm m1:text-xl">

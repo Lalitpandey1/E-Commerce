@@ -12,10 +12,10 @@ const ImageContainer = ({ productId }) => {
   const productImage = productData.images;
 
   return (
-    <div className="flex flex-col-reverse lg:flex-row w-full gap-1 h-full">
+    <div className="flex flex-col-reverse lg:flex-row w-full gap-1 h-full bg-primary">
       {/* Image Bar */}
       <div className="h-full flex flex-row lg:flex-col  items-center min-w-20 lg:w-35 my-3">
-        <div className="flex-1 lg:h-full w-full justify-center items-center flex flex-row lg:flex-col m3:gap-1 m2:gap-3 m1:gap-6 lg:gap-2 bg-purple-400 overflow-scroll scrollbar-hide">
+        <div className="flex-1 lg:h-full w-full justify-center items-center flex flex-row lg:flex-col rounded-2xl  m3:gap-1 m2:gap-3 m1:gap-6 lg:gap-2  bg-[#F0F0F0]  overflow-scroll scrollbar-hide">
           {productImage.map((item, index) => {
             return (
               <img
@@ -32,7 +32,7 @@ const ImageContainer = ({ productId }) => {
       </div>
 
       {/* Selected Image */}
-      <div className="flex items-center rounded-xl mx-auto">
+      <div className="flex items-center rounded-3xl mx-auto">
         <img
           className="max-h-140 m2:max-w-100 m3:max-w-60 lg:max-w-85 xl:max-w-135 rounded-xl object-cover self-center"
           src={selectImage || productImage[0]}

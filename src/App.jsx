@@ -8,8 +8,8 @@ import ComponentTemplate from "./component/Template/ComponentTemplate";
 function App() {
   return (
     <>
-      {/* <Landing /> */}
-      <ComponentTemplate children={<NotFound id={"I777"} />} />
+      <Landing />
+      {/* <ComponentTemplate children={<NotFound id={"I777"} />} /> */}
     </>
   );
 }

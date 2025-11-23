@@ -15,9 +15,9 @@ const Footer = () => {
   return (
     <div>
       {/* Structure 1 */}
-      <div className="w-full  md:bg-[#2B2B2B] py-1 hidden md:block">
+      <div className="w-full  md:bg-[#2B2B2B] px-2 py-1 hidden md:block">
         <div className="md:grid  lg:grid-cols-[3fr_1fr_1fr_2fr] my-[55px] md:grid-cols-[2fr_1fr_1fr_1fr] grid-cols-4 md:gap-7 lg:gap-10 overflow-hidden">
-          <div className=" border border-white">
+          <div>
             <div>
               {/* Title */}
               <p className="text-[30px] text-[#38CB89] font-bold font-postnobills">
@@ -30,7 +30,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className=" border border-white">
+          <div>
             <div className="text-left">
               {/* Title */}
               <h3 className="text-[20px] text-[#38CB89]  font-medium">Page</h3>
@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className=" border border-white">
+          <div>
             <div className="text-left">
               {/* Title */}
               <h3 className="text-[20px]  text-[#38CB89] font-medium">Info</h3>
@@ -56,7 +56,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className=" border border-white">
+          <div>
             <div className="text-left">
               <h3 className="text-[20px]   text-[#38CB89] font-medium">
                 Office

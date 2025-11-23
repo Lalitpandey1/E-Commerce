@@ -5,9 +5,9 @@ const customWidths =
   "sm:max-w-[594px] md:max-w-[652px] lg:max-w-[904px] xl:max-w-[1200px]";
 
 const NavBarTemplate = ({ children, color }) => {
-  const divA_Color = color || "bg-blue-500";
-  const divB_Color = color || "bg-yellow-400";
-  const divC_Color = color || "bg-green-500";
+  const divA_Color = color || "bg-white";
+  const divB_Color = color || "bg-[#f8f8f8]";
+  const divC_Color = color || "bg-[#f8f8f8]";
 
   return (
     <div
@@ -27,7 +27,7 @@ const NavBarTemplate = ({ children, color }) => {
             ${customWidths} 
             w-full 
             mx-auto 
-            shadow-xl  text-white text-center  overflow-hidden
+            shadow-xl text-center overflow-hidden
             max-w-[1200px] transition-all duration-500 ease-in-out
           `}
         >
