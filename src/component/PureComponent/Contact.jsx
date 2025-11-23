@@ -13,11 +13,12 @@ const Contact = () => {
           {/* Content box */}
           <div className="w-full flex flex-col">
             {/* Text-alignment Box -> ML */}
-            <div className="w-full ml-3 m1:ml-5 lg:ml-10 text-wrap">
+            <div className="w-full ml-3 m1:ml-5 text-wrap">
               <p>Need Help&nbsp;?</p>
-              <p>
-                Mail Us&nbsp;
-                <span className="italic text-wrap">
+              <p className="my-2">
+                Mail Us
+                <span className="italic md:text-xs xl:text-lg text-wrap">
+                  {" "}
                   @Lalitpandey4all@gmail.com
                 </span>
               </p>
@@ -36,7 +37,7 @@ const Contact = () => {
 
       <div className="w-full md:w-[50%] bg-amber-400 font-semibold text-[15px] m1:text-[20px] flex items-center justify-center py-10 ">
         <div className="flex flex-col items-center gap-7 py-7 mx-auto w-[50%] bg-white rounded-lg overflow-hidden">
-          <p>Connect with Us</p>
+          <p>Connect with Us</p>{" "}
           <div className="flex gap-5 flex-wrap text-[#38CB89]">
             <IoLogoInstagram size={28} />
             <FaFacebookF size={28} />

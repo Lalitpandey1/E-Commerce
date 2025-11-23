@@ -8,8 +8,12 @@ import { IoIosArrowUp } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 import { IoBagHandle } from "react-icons/io5";
 import LoginModal from "../LoginModal/LoginModal";
+import { selectCartItems } from "../../features/cart/cartSlice";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const Cart = useSelector(selectCartItems);
+  const cartCount = Cart.reduce((acc, item) => (acc += item.Qty), 0);
   const [arrow, setArrow] = useState(false);
   const [drop, setDrop] = useState(false);
   const [Burger, setBurger] = useState(false);
@@ -65,7 +69,7 @@ const Navbar = () => {
         {/* title & Hamburger Container */}
         <div className="flex flex-row items-center bg-blue-300 gap-2.5  font-extrabold">
           {/* Hamburger svg*/}
-          <a className="sm:hidden " onClick={handleBurger}>
+          <a className="m1:hidden " onClick={handleBurger}>
             {Burger ? <X size={22} /> : <GiHamburgerMenu size={20} />}
           </a>
 
@@ -110,7 +114,12 @@ const Navbar = () => {
 
           {/* Shopping */}
           <div>
-            <IoBagHandle size={26} />
+            <div className="relative w-full">
+              <IoBagHandle size={26} />
+              <div className="absolute text-[8px] top-0 right-0 bg-red-500 px-1 rounded-full">
+                {cartCount}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -138,13 +147,13 @@ const Navbar = () => {
 
       <div
         className={`w-full transition-all duration-500 ease-in-out h-full xl:hidden flex bg-red-700 ${
-          Burger ? "max-h-max" : "max-h-0"
+          Burger ? "max-h-max" : "max-h-0 overflow-hidden"
         } `}
       >
         {/* Navigation COntainer */}
         <div className="w-full">
           {/* Navigation Content */}
-          <div className="mx-auto gap-2 my-4 flex flex-col w-full  justify-center items-center">
+          <div className="mx-auto gap-2 my-4 m1:hidden flex flex-col w-full  justify-center items-center">
             <div
               className="flex items-center gap-1"
               onClick={handleProductDrop}

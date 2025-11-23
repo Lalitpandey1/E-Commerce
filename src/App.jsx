@@ -1,42 +1,15 @@
-import { useState } from "react";
 import "./App.css";
-import NavBarTemplate from "./component/Template/FlexNavbar";
-import Navbar from "./component/PureComponent/Navbar";
+import Cart from "./component/Pages/Cart/Cart";
+import Landing from "./component/Pages/Landing";
+import NotFound from "./component/Pages/NotFound";
+import ProductPage from "./component/Pages/ProductPage/ProductPage";
 import ComponentTemplate from "./component/Template/ComponentTemplate";
-import OfferSlider from "./component/PureComponent/OfferSlider";
-import ProductCategories from "./component/PureComponent/ProductCategories";
-import BestSellers from "./component/PureComponent/BestSellers";
-import Supplements from "./component/PureComponent/Supplements";
-import NewLaunchedProduct from "./component/PureComponent/NewLaunchedProduct";
-import TimerOffer from "./component/PureComponent/TimerOffer";
-import Contact from "./component/PureComponent/Contact";
-import Footer from "./component/PureComponent/Footer";
-import ProductPage from "./component/PureComponent/ProductPage/ProductPage";
-import Cart from "./component/PureComponent/Cart/Cart";
 
 function App() {
-  const [count, setCount] = useState(0);
-  // #38CB89 => green
-
   return (
     <>
-      {/* <NavBarTemplate children={<Navbar />} />
-      <ComponentTemplate children={<OfferSlider />} />
-      <ComponentTemplate children={<ProductCategories />} />
-      <ComponentTemplate children={<BestSellers />} />
-      <ComponentTemplate children={<Supplements />} />
-      <ComponentTemplate children={<NewLaunchedProduct />} />
-      <TimerOffer />
-      <Contact />
-      <NavBarTemplate
-        children={<Footer />}
-        color={"bg-[#2B2B2B]"}
-        Mdwidth={855}
-      /> */}
-
-      {/* <ComponentTemplate children={<ProductPage id={"E901"} />} /> */}
-      {/* <Footer /> */}
-      <ComponentTemplate children={<Cart newId={"D007"} />} />
+      {/* <Landing /> */}
+      <ComponentTemplate children={<NotFound id={"I777"} />} />
     </>
   );
 }

@@ -14,7 +14,7 @@ const ComponentTemplate = ({ children }) => {
     <div id="DivA" className="w-full bg-blue-500 px-0 md:px-5 pb-2 md:pb-4 ">
       <div
         id="DivB"
-        className={`bg-yellow-400 w-full  px-[13px] m3:px-7 sm:px-[38px] lg:px-13
+        className={`bg-yellow-400 w-full  px-[13px] m3:px-7 sm:px-[38px] lg:px-13 transition-all duration-500 ease-in-out
         
         `}
       >
@@ -27,6 +27,7 @@ const ComponentTemplate = ({ children }) => {
             mx-auto 
             shadow-xl  text-white text-center   rounded-xl
             max-w-[1200px]
+            transition-all duration-500 ease-in-out
           `}
         >
           {children}

@@ -1,32 +1,35 @@
 import React from "react";
-import Navbar from "../Navbar";
+import Navbar from "../../PureComponent/Navbar";
 import ImageContainer from "./ImageContainer";
 import Star from "../../Extra/Star";
-import { Heart } from "lucide-react";
-import BestSellers from "../BestSellers";
-import TimerOffer from "../TimerOffer";
-import Footer from "../Footer";
-import data from "../../../assets/BestSellerData";
+import BestSellers from "../../PureComponent/BestSellers";
+import { useDispatch, useSelector } from "react-redux";
+import Footer from "../../PureComponent/Footer";
+import { addItem } from "../../../features/cart/cartSlice";
+import { selectProductLookup } from "../../../features/cart/productSlice";
 
 const ProductPage = ({ id }) => {
-  const fetchProduct = (id) => {
-    const filteredData = data.find((item) => item.id === id);
-    return filteredData;
-  };
+  const productLookup = useSelector(selectProductLookup);
+  const productData = productLookup[id];
+  const dispatch = useDispatch();
 
-  const productData = fetchProduct(id);
+  const handleAddtoCart = () => {
+    dispatch(addItem(id));
+  };
 
   return (
     <div className="w-full">
       <Navbar />
       <div className="bg-white flex flex-col gap-4 lg:flex-row ">
-        <div className="xl:w-[50%] lg:h-140 w-full bg-black overflow-hidden">
-          <ImageContainer productId={id || "D007"} />
+        <div className="xl:w-[60%] lg:h-140 w-full bg-black overflow-hidden">
+          <ImageContainer productId={id || "A001"} />
         </div>
 
-        <div className="pl-3 xl:w-[45%] w-full bg-red-500 rounded-2xl justify-items-start">
+        <div className="pl-3 xl:w-[40%] w-full bg-red-500 rounded-2xl justify-items-start">
           {/* Title */}
-          <h1 className="text-2xl my-5 font-semibold">{productData.title}</h1>
+          <h1 className="text-2xl my-5 text-left font-semibold">
+            {productData.title}
+          </h1>
 
           {/* Rating */}
           <div className="flex gap-1 my-3 items-center">
@@ -47,7 +50,10 @@ const ProductPage = ({ id }) => {
           </div>
 
           {/* Add to Cart */}
-          <button className="bg-[#38CB89] mx-auto my-10 px-2.5 rounded-xl font-semibold py-1 text-xl">
+          <button
+            onClick={() => handleAddtoCart()}
+            className="bg-[#38CB89] mx-auto my-10 px-2.5 rounded-xl font-semibold py-1 text-xl"
+          >
             Add to cart
           </button>
         </div>

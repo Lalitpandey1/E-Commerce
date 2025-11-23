@@ -17,7 +17,7 @@ const NavBarTemplate = ({ children, color }) => {
       <div
         id="DivB"
         className={`${divB_Color} w-full   overflow-hidden px-[13px] m3:px-7 sm:px-[38px] lg:px-13
-        
+        transition-all duration-500 ease-in-out
         `}
       >
         <div
@@ -28,7 +28,7 @@ const NavBarTemplate = ({ children, color }) => {
             w-full 
             mx-auto 
             shadow-xl  text-white text-center  overflow-hidden
-            max-w-[1200px]
+            max-w-[1200px] transition-all duration-500 ease-in-out
           `}
         >
           {children}

@@ -4,7 +4,7 @@ import ProductCardComponent from "../Extra/ProductCardComponent";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const Supplements = () => {
+const NewLaunched = () => {
   const [productData, setProductData] = useState(data);
 
   const NextArrow = ({ onClick }) => {
@@ -97,6 +97,8 @@ const Supplements = () => {
                 discount={data.discount}
                 totalPrice={data.totalPrice}
                 Price={data.Price}
+                bestSeller={false}
+                AddtoCart={false}
               />
             </div>
           ))}
@@ -130,6 +132,8 @@ const Supplements = () => {
                 discount={data.discount}
                 totalPrice={data.totalPrice}
                 Price={data.Price}
+                bestSeller={false}
+                AddtoCart={false}
               />
             </div>
           ))}
@@ -139,4 +143,4 @@ const Supplements = () => {
   );
 };
 
-export default Supplements;
+export default NewLaunched;

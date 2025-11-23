@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import data from "../../../assets/BestSellerData";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProductLookup } from "../../../features/cart/productSlice";
 import { removeItem, updateQuantity } from "../../../features/cart/cartSlice";
@@ -10,6 +9,13 @@ const CartItem = ({ id, Qty }) => {
 
   const handleRemoveItem = () => {
     dispatch(removeItem(id));
+  };
+
+  const handleIncrease = () => {
+    dispatch(updateQuantity({ id: id, change: 1 }));
+  };
+  const handleDecrease = () => {
+    dispatch(updateQuantity({ id: id, change: -1 }));
   };
   const product = productLookup[id];
   if (!product) return;
@@ -34,9 +40,35 @@ const CartItem = ({ id, Qty }) => {
               {product.Bestcategory}
             </p>
             <p className="my-2"></p>
-            <p className="text-[8px] m2:text-xs md:text-sm font-semibold">
-              Qty: {Qty}
-            </p>
+            <div className="inline-block">
+              {/* Label */}
+              <p className="text-[8px] m1:ml-3 m2:text-xs md:text-sm font-semibold text-gray-500 mb-0.5">
+                Qty
+              </p>
+
+              <div className="flex items-center border border-gray-300 rounded-sm w-fit bg-white">
+                <button
+                  onClick={handleDecrease}
+                  className="px-0.5 md:px-1 text-gray-600 hover:bg-gray-100 active:bg-gray-200 transition-colors focus:outline-none leading-none"
+                >
+                  -
+                </button>
+
+                <input
+                  type="text"
+                  value={Qty}
+                  readOnly
+                  className="w-3 m2:w-5 md:w-6 text-center border-none p-0 text-gray-700 text-[8px] m2:text-xs md:text-sm focus:ring-0 cursor-default bg-transparent leading-none"
+                />
+
+                <button
+                  onClick={handleIncrease}
+                  className="px-0.5 md:px-1 text-gray-600 hover:bg-gray-100 active:bg-gray-200 transition-colors focus:outline-none leading-none"
+                >
+                  +
+                </button>
+              </div>
+            </div>
           </div>
 
           {/* Product Action */}

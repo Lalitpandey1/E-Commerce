@@ -1,25 +1,32 @@
 import React from "react";
-
+import { addItem } from "../../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
 import { Heart } from "lucide-react"; // Assuming you still use lucide-react for the Heart icon
 import category6 from "../../assets/CategoriesImg/Category6.png"; // Assuming category6 is the correct image source
 import Star from "./Star";
 const ProductCardComponent = ({
+  id,
   images,
   title,
   rating,
   discount,
   Price,
   totalPrice,
+  bestSeller,
+  AddtoCart,
 }) => {
   const maxTitleString = 50;
 
+  const dispatch = useDispatch();
   return (
     // Add 'relative' to the parent container
     <div className="relative flex flex-col items-center justify-center px-3 md:px-8 xl:px-9  bg-[#F8F8F8] rounded-2xl shadow-lg mx-auto">
       {/* BESTSELLER Tag - Adjusted for positioning */}
-      <h2 className="invisible lg:visible self-start font-medium text-[#38CB89] py-1 px-2 z-10">
-        BestSeller
-      </h2>
+      {bestSeller && (
+        <h2 className="invisible lg:visible self-start font-medium text-[#38CB89] py-1 px-2 z-10">
+          BestSeller
+        </h2>
+      )}
 
       {/* 50% Discount Badge - positioned relative to the parent div */}
       <span className="xl:text-[10px] lg:text-[9px] md:text-[10px] m2:text-[10px] m3:text-[6px] text-[5px] text-white px-0.5 py-1 rounded-full bg-red-600 absolute xl:left-10 md:left-7 m1:left-7 m3:left-5  top-10 z-20  invisible m3:visible">
@@ -41,9 +48,14 @@ const ProductCardComponent = ({
         className=" py-1 max-w-full max-h-[200px] "
       />
 
-      <button className="md:py-1.5 py-1 px-2 md:px-4 my-1 text-[5px] m2:text-xs rounded-2xl bg-green-400 text-white font-semibold hover:bg-green-500 transition-colors">
-        Add to Cart
-      </button>
+      {AddtoCart && (
+        <button
+          onClick={() => dispatch(addItem(id))}
+          className="md:py-1.5 py-1 px-2 md:px-4 my-1 text-[5px] m2:text-xs rounded-2xl bg-green-400 text-white font-semibold hover:bg-green-500 transition-colors"
+        >
+          Add to Cart
+        </button>
+      )}
 
       {/* Rating and Title */}
       <div className="flex flex-col  m1:ml-2 w-full justify-start">

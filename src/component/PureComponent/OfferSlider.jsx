@@ -18,7 +18,7 @@ const OfferSlider = () => {
   const slides = [slider1, slider2, slider3, slider4];
 
   return (
-    <div className="w-full bg-black">
+    <div className="w-full mt-5 bg-black">
       <div className="bg-red-500 relative">
         {" "}
         {/* Add 'relative' to position arrows */}

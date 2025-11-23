@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import data from "../../assets/BestSellerData.jsx";
+import React from "react";
 import ProductCardComponent from "../Extra/ProductCardComponent";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { selectProductLookup } from "../../features/cart/productSlice.js";
+import { useSelector } from "react-redux";
 
 const Supplements = () => {
-  const [productData, setProductData] = useState(data);
+  const try1 = useSelector(selectProductLookup);
+  const data = [...Object.values(try1)];
 
   const NextArrow = ({ onClick }) => {
     return (
@@ -98,15 +100,18 @@ const Supplements = () => {
           </div>
         </div>
         <Slider {...settings}>
-          {productData.reverse().map((data) => (
+          {data.reverse().map((data) => (
             <div key={data.id} className="w-full overflow-hidden bg-gray-800">
               <ProductCardComponent
+                id={data.id}
                 images={data.images}
                 title={data.title}
                 rating={data.rating}
                 discount={data.discount}
                 totalPrice={data.totalPrice}
                 Price={data.Price}
+                bestSeller={false}
+                AddtoCart={true}
               />
             </div>
           ))}
@@ -144,12 +149,15 @@ const Supplements = () => {
           {data.slice(0, 4).map((data) => (
             <div key={data.id} className="w-full overflow-hidden bg-gray-800">
               <ProductCardComponent
+                id={data.id}
                 images={data.images}
                 title={data.title}
                 rating={data.rating}
                 discount={data.discount}
                 totalPrice={data.totalPrice}
                 Price={data.Price}
+                bestSeller={false}
+                AddtoCart={true}
               />
             </div>
           ))}

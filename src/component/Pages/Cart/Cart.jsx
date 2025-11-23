@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import CartItem from "./CartItem";
-import data from "../../../assets/BestSellerData";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   selectCartItems,
   selectCartTotal,
-  addItem,
 } from "../../../features/cart/cartSlice";
-import { selectProductLookup } from "../../../features/cart/productSlice";
 
-const Cart = ({ newId }) => {
+const Cart = () => {
   const cartItems = useSelector(selectCartItems);
   const cartValue = useSelector(selectCartTotal);
-  const dispatch = useDispatch();
 
   const getTomorrowDate = () => {
     const today = new Date();
@@ -21,11 +17,6 @@ const Cart = ({ newId }) => {
     const month = tomorrow.toLocaleDateString("en-US", { month: "short" });
     return `${day}  ${month}`;
   };
-
-  useEffect(() => {
-    if (!newId) return;
-    dispatch(addItem(newId));
-  }, [newId, dispatch]);
 
   return (
     <div className="text-black flex flex-col py-10 overflow-hidden">
